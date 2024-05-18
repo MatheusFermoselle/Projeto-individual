@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="Curiosidades.css">
+<body>
+    
+    <div class="header">
+        <img src="GameStats-removebg-preview.png" alt="" class="img">
+        <ul class="navbar">
+
+            <a href="siteinstitucional.html"> Home </a>
+            <a href="Login.html"> Login</a>
+            <a href="Cadastro.html"> Cadastro </a>
+        
+
+
+        </ul>
+
+    </div>
+
+    <div class="Bem-vindo">
+
+        <h1> Bem-vindo a página de curiosidades </h1>
+        <p> Aqui você terá acesso a informações divertidas e interessantes sobre o futebol brasileiro</p>
+
+    
+
+    <div class="container" id="container"> 
+
+        Confira o ranking dos clubes com mais títulos no Brasileirão (escreva o numero que deseja saber do
+        ranking): <input id="input_brasileirao" placeholder="ex: 1" type="text"> <button onclick="Ver_braileirao()"> Ver curiosidade
+        </button> <br><br>
+        Confira o ranking dos clubes com mais títulos na Libertadores (escreva o numero que deseja saber do
+        ranking): <input id="input_libertadores" placeholder="ex: 2" type="text"> <button onclick="Ver_libertadores()"> Ver curiosidade
+        </button> <br><br>
+        Confira o ranking dos jogadores com mais gols em jogos oficiais (escreva o numero que deseja saber do
+        ranking, este vai até 5):<input id="input_artilheiros" placeholder="ex: 3" type="text"> <button
+            onclick="Ver_artilheiros()"> Ver curiosidade </button> <br><br>
+
+
+    </div>
+
+    <div id="div_msg" class="resultados"> Aqui aparecerão seus resultados</div>
+
+</div>
+
+</body>
+</html>
+<script>
+
+var lista_campeao_brasileirao = ['Palmeiras - 12 (1960, 1967, 1967, 1969, 1972, 1973, 1993, 1994, 2016, 2018, 2022 e 2023)',
+            'Santos - 8 (1961, 1962, 1963 , 1964 , 1965 , 1968, 2002 e 2004)',
+            'Flamengo - 8 (1980, 1982, 1983, 1987, 1992, 2009, 2019 e 2020)',
+            'Corinthians - 7 (1990, 1998, 1999, 2005, 2011, 2015 e 2017)',
+            'São Paulo - 6 (1977, 1986, 1991, 2006, 2007 e 2008)',
+            'Cruzeiro - 4 (1993, 1996, 2000, 2003, 2017 e 2018)',
+            'Fluminense - 4 (1970, 1984, 2010 e 2012)',
+            'Vasco - 4 (1974, 1989, 1997 e 2000)',
+            'Internacional - 3 (1975, 1976 e 1979)',
+            'Bahia - 2 (1959 e 1988)',
+            'Botafogo - 2 (1968 e 1995)',
+            'Grêmio - 2 (1981 e 1996)',
+            'Atlético-MG - 2 (1971 e 2021)',
+            'Athletico-PR - 1 (2001)',
+            'Coritiba - 1 (1985)',
+            'Guarani - 1 (1978)',
+            'Sport - 1 (1987)']
+
+        var lista_campeao_libertadores = ['Independiente - 7 (1964, 1965, 1972, 1973, 1974, 1975 e 1984)',
+            'Boca Juniors - 6 (1977, 1978, 2000, 2001, 2003 e 2007)',
+            'Peñarol (URU) - 5 (1960, 1961, 1966, 1982 e 1987)',
+            'Estudiantes - 4 (1968, 1969, 1970 e 2009)',
+            'River Plate - 4 (1986, 1996, 2015 e 2018)',
+            'FLAMENGO - 3 (1981, 2019 e 2022)',
+            'GRÊMIO - 3 (1983, 1995 e 2017)',
+            'SÃO PAULO - 3 (1992, 1993 e 2005) ',
+            'SANTOS - 3 (1962, 1963 e 2011)',
+            'PALMEIRAS - 3 (1999, 2020 e 2021)',
+            'Olimpia (PAR) - 3 (1979, 1990 e 2002)',
+            'Nacional (URU) - 3 (1971, 1980 e 1988)',
+            'INTERNACIONAL - 2 (2006 e 2010)',
+            'CRUZEIRO - 2 (1976 e 1997)',
+            'Atlético Nacional (COL) - 2 (1989 e 2016)',
+        ]
+
+        lista_top_5_jogadores_gols_marcados = ['1° - Pelé (+1000 gols)', '2° - Cristiano Ronaldo ( +850 gols)', '3° - Messi  ( +800 gols)', '4° - Romário  (+740 gols)', '5° - Gerard Muller (+ 720 gols)']
+
+
+
+        function Ver_braileirao() {
+            var ranking_brasileirao = Number(input_brasileirao.value)
+
+            if (ranking_brasileirao == '') {
+
+                alert(' Insira um número correto')
+
+            }
+            if (ranking_brasileirao == 1) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[0]}`
+
+            }
+            if (ranking_brasileirao == 2) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[1]}`
+
+            } if (ranking_brasileirao == 3) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[2]}`
+
+            } if (ranking_brasileirao == 4) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[3]}`
+
+            } if (ranking_brasileirao == 5) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[4]}`
+
+            } if (ranking_brasileirao == 6) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[5]}`
+
+            } if (ranking_brasileirao == 7) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[6]}`
+
+            } if (ranking_brasileirao == 8) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[7]}`
+
+            } if (ranking_brasileirao == 9) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[8]}`
+
+            } if (ranking_brasileirao == 10) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[9]}`
+
+            } if (ranking_brasileirao == 11) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[10]}`
+
+            } if (ranking_brasileirao == 12) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[11]}`
+
+            } if (ranking_brasileirao == 13) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[12]}`
+
+            } if (ranking_brasileirao == 14) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[13]}`
+
+            } if (ranking_brasileirao == 15) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[14]}`
+
+            } if (ranking_brasileirao == 16) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[15]}`
+
+            } if (ranking_brasileirao == 17) {
+
+                div_msg.innerHTML = `${lista_campeao_brasileirao[16]}`
+
+            }  if (ranking_brasileirao > 17) {
+
+                alert ('O ranking do brasileirão só vai até o 17')
+                
+            }
+
+        }
+
+        function Ver_libertadores() {
+            var ranking_libertadores = Number(input_libertadores.value)
+
+            if (ranking_libertadores == '') {
+
+                alert(' Insira um número correto')
+
+            } if (ranking_libertadores == 1) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[0]}`
+
+            }
+            if (ranking_libertadores == 2) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[1]}`
+
+            } if (ranking_libertadores == 3) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[2]}`
+
+            } if (ranking_libertadores == 4) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[3]}`
+
+            } if (ranking_libertadores == 5) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[4]}`
+
+            } if (ranking_libertadores == 6) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[5]}`
+
+            } if (ranking_libertadores == 7) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[6]}`
+
+            } if (ranking_libertadores == 8) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[7]}`
+
+            } if (ranking_libertadores == 9) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[8]}`
+
+            } if (ranking_libertadores == 10) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[9]}`
+
+            } if (ranking_libertadores == 11) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[10]}`
+
+            } if (ranking_libertadores == 12) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[11]}`
+
+            } if (ranking_libertadores == 13) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[12]}`
+
+            } if (ranking_libertadores == 14) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[13]}`
+
+            } if (ranking_libertadores == 15) {
+
+                div_msg.innerHTML = `${lista_campeao_libertadores[14]}`
+
+            } if (ranking_libertadores > 15) {
+
+                alert('O ranking da libertadores só vai até o 15 ')
+                
+            }
+
+
+
+        }
+
+        function Ver_artilheiros() {
+            var ranking_artilheiros = Number(input_artilheiros.value)
+
+            if (ranking_artilheiros == '') {
+
+                alert(' Insira um número correto')
+
+            } if (ranking_artilheiros == 1) {
+
+                div_msg.innerHTML = `${lista_top_5_jogadores_gols_marcados[0]}`
+
+            }
+            if (ranking_artilheiros == 2) {
+
+                div_msg.innerHTML = `${lista_top_5_jogadores_gols_marcados[1]}`
+
+            } if (ranking_artilheiros == 3) {
+
+                div_msg.innerHTML = `${lista_top_5_jogadores_gols_marcados[2]}`
+
+            } if (ranking_artilheiros == 4) {
+
+                div_msg.innerHTML = `${lista_top_5_jogadores_gols_marcados[3]}`
+
+            } if (ranking_artilheiros == 5) {
+
+                div_msg.innerHTML = `${lista_top_5_jogadores_gols_marcados[4]}`
+
+            } if (ranking_artilheiros > 5) {
+
+                alert('O ranking dos artilherios só vai até o 5')
+                
+            }
+
+
+
+        }
+
+    </script>

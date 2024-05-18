@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="Login.css">
+
+<body>
+    <div class="header">
+        <img src="GameStats-removebg-preview.png" alt="" class="img">
+        <ul class="navbar">
+
+            <a href="siteinstitucional.html"> Home </a>
+            <a href="Login.html"> Login</a>
+            <a href="Cadastro.html"> Cadastro </a>
+            <a href="curiosidades.html"> Curiosidades </a>
+
+
+        </ul>
+
+    </div>
+
+    <div class="div_pai">
+
+        <h1> Login </h1>
+
+
+        <div class="input">
+
+            Email: <input type="text" class="entradas" id="input_email">
+            Senha: <input type="text" class="entradas" id="input_senha">
+
+    <button class="botão" onclick="Login()"> Fazer login </button>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
+<script>
+
+function Login (){
+var email = input_email.value
+var senha = input_senha.value
+
+
+if (email == '') {
+
+    alert('Digite seu email')
+    
+} else if (senha == '') {
+
+    alert('Digite sua senha')
+    
+}
+
+
+if (senha != 123) {
+
+    alert('Senha incorreta')
+    return false
+    
+}
+
+else if ( email != 'matheusfermoselle@gmail.com'){
+
+    alert('Email incorreto')
+    return false
+}
+
+window.location.href = "dashbord.html"
+return true
+
+}
+
+
+
+
+</script>

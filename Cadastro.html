@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="Cadastro.css">
+<body>
+    
+    <div class="header">
+        <img src="GameStats-removebg-preview.png" alt="" class="img">
+        <ul class="navbar">
+
+            <a href="siteinstitucional.html"> Home </a>
+            <a href="Login.html"> Login</a>
+            <a href="Cadastro.html"> Cadastro </a>
+            <a href="curiosidades.html"> Curiosidades </a>
+
+
+        </ul>
+
+    </div>
+
+    <div class="div_pai">
+
+    <h1> Cadastro </h1>
+
+    <div class="input">
+        Nome: <input class="entradas" type="text" id="input_nome" placeholder="Ex: Maria">
+        Email: <input class="entradas" type="text" id="input_email" placeholder="Ex: mariasilva@gmail.com">
+        Telefone: <input class="entradas" type="text" id="input_telefone" placeholder="Ex: 55-11908764432">
+        Senha: <input class="entradas" type="password" id="input_senha" placeholder="Ex: senha ">
+        Confirmar senha: <input class="entradas" type="password" id="input_confirmar" placeholder="Ex: senha">
+        <button class="botão" onclick="Cadastrar()"> Cadastrar </button>
+
+    </div>
+
+</div>
+</body>
+</html>
+<script>
+
+function Cadastrar(){
+var nome = input_nome.value
+var email = input_email.value
+var telefone = Number(input_telefone.value)
+var senha = input_senha.value
+var confirmar = input_confirmar.value
+var indice_arroba = email.indexOf('@')
+
+if (nome == '' || senha == '' || email == '' || telefone == '' || confirmar == '') {
+
+    alert('Preencha todos os campos')
+    return false
+}
+
+if (senha != confirmar) {
+
+    alert('As senhas tem que ser as mesmas')
+    return false
+}
+
+if (indice_arroba < 0) {
+
+alert('Está faltando o caracter especial "@" no email')
+return false
+}
+
+if (telefone.length < 9 || telefone.length > 11) {
+
+alert('A quantidade de números no telefone está errada')
+return false
+}
+
+if ( email.length < 5) {
+
+alert('Seu email está muito curto')
+return false
+}
+
+
+window.location.href = "Login.html"
+return true
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+</script>
