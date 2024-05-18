@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="siteinstitucional.css">
+
+<body>
+
+    <div class="header">
+        <img src="GameStats-removebg-preview.png" alt="">
+        <ul class="navbar">
+
+            <a href="#quem_somos"> Sobre nós </a>
+            <a href="Login.html"> Login</a>
+            <a href="Cadastro.html"> Cadastro </a>
+            <a href="#simulador"> Simulador </a>
+            <a href="curiosidades.html"> Curiosidades </a>
+
+
+        </ul>
+
+    </div>
+        <div class="banner"></div>
+
+        <div class="quem_somos" id="quem_somos">
+            <div class="conteudo_quem_somos">
+
+                <h2> Sobre nós:</h2>
+                <h3> "Somos a GameStats, empresa líder em tecnologia extremamente avançada para análise de dados do
+                    mundo do futebol. Na GameStats, nossa missão é fornecer aos nossos clientes uma tecnologia superior
+                    que oferece segurança e precisão incomparáveis em seus dados. Estamos comprometidos em evoluir
+                    constantemente, impulsionando o progresso neste esporte." </h3>
+            </div>
+        </div>
+
+    
+
+
+<div class="simulador" id="simulador">
+
+    <div class="container">
+
+        <div class="card">
+            <img src="png-transparent-football-player-american-football-fc-barcelona-pass-hand-sport-monochrome_1_-removebg-preview.png"
+                alt="">
+            <h4> Passes </h4>
+            Nome jogador: <br> <input id="input_nome_passador" type="text"> <br><br>
+            Quantos passes foram efetuados na partida? <input id="input_passes" type="text"><br><br>
+            Quantos foram corretos? <br> <input id="input_passes_corretos" type="text"><br><br>
+            <button onclick="calcular_passes()"> Calcular </button>
+
+        </div>
+        <div class="card">
+            <img src="png-transparent-football-player-silhouette-football-player-cartoon-hand-sports-equipment-arm_1_-removebg-preview.png"
+                alt="">
+            <h4> Dribles </h4>
+            Nome jogador: <br> <input id="input_nome_driblador" type="text"><br><br>
+            Quantos dribles foram efetuados na partida? <br> <input type="text" id="input_dribles"><br><br>
+            Quantos foram corretos? <br> <input type="text" id="input_dribles_corretos"><br><br>
+            <button onclick="calcular_dribles()"> Calcular </button>
+
+
+        </div>
+
+
+
+        <div class="card">
+            <img src="kisspng-kick-football-russia-2018-5ac9fbc5cecef1.9943272415231866298471_1_-removebg-preview.png"
+                alt="">
+            <h4> Finalizações </h4>
+            Nome jogador: <br>
+            <input id="input_nome_finalizador" type="text"> <br><br>
+            Quantas finalizações foram efetuadas na partida? <input id="input_finalizacoes" type="text"> <br><br>
+            Quantos foram corretos? <br> <input id="input_finalizacoes_corretas" type="text"><br><br>
+            <button onclick="calcular_finalizacoes()"> Calcular </button>
+
+        </div>
+    </div>
+</div>
+
+<div id="resultados" class="resultados">
+
+
+    <h2>Simulador do seu jogador!</h2>
+    <h3> Aqui aperecerá as informações desejadas por você, baseadas nos dados inseridos acima.</h3>
+
+
+
+</div>
+
+<footer class="rodape">
+    <div class="conteudo-rodape">
+        <p>© 2024 GameStats. Todos os direitos reservados.</p>
+        <ul class="fale_conosco">
+            <li><a href="https://github.com/MatheusFermoselle">Fale Conosco - Matheus Fermoselle de Vita Silva</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>
+<script>
+
+    function calcular_passes() {
+        var qtdpasses = Number(input_passes.value)
+        var passes_corretos = Number(input_passes_corretos.value)
+        var nome_passador = input_nome_passador.value
+        var porcentagem = (passes_corretos / qtdpasses) * 100
+
+        if (nome_passador == '') {
+
+            alert(`O nome do jogador não está preenchido`)
+
+        } else if (qtdpasses == 0) {
+
+            alert(`Não há um número de passes`)
+
+        } else if (passes_corretos == '') {
+            alert(`Não está preenchido o campo de passes corretos`)
+
+        }
+
+
+
+        if (qtdpasses <= 30 && porcentagem > 50) {
+
+            resultados.innerHTML = `Efetuando ${qtdpasses} na partida e acertando ${passes_corretos}, ${nome_passador} não foi muito participativo, porém teve uma alta média de acertos de ${porcentagem}%. `
+        } else if (qtdpasses <= 30 && porcentagem == 50) {
+
+            resultados.innerHTML = `Efetuando ${qtdpasses} na partida e acertando ${passes_corretos}, ${nome_passador} não foi muito participativo, porém esteve na média de acertos, com ${porcentagem}%. `
+        } else if (qtdpasses <= 30 && porcentagem < 50) {
+
+            resultados.innerHTML = `Efetuando ${qtdpasses} na partida e acertando ${passes_corretos}, ${nome_passador} não foi muito participativo e esteve fora da média de acertos, com ${porcentagem}%. `
+
+        } else if (qtdpasses <= 50 && porcentagem > 50) {
+
+            resultados.innerHTML = `Efetuando ${qtdpasses} na partida e acertando ${passes_corretos}, ${nome_passador} não foi concorrente a craque do jogo mas foi participativo e eficiente , já que teve também uma alta média de acertos de ${porcentagem}%. `
+        } else if (qtdpasses <= 50 && porcentagem == 50) {
+
+            resultados.innerHTML = `Efetuando ${qtdpasses} na partida e acertando ${passes_corretos}, ${nome_passador} foi participativo e acertou mais da metade dos passes, gerando uma média de acertos de ${porcentagem}%. `
+        } else if (qtdpasses <= 50 && porcentagem < 50) {
+
+            resultados.innerHTML = `Efetuando ${qtdpasses} na partida e acertando ${passes_corretos}, ${nome_passador} foi participativo, porém teve uma média de acertos baixa, de ${porcentagem}%. `
+        } else if (qtdpasses <= 80 && porcentagem > 50) {
+            resultados.innerHTML = `Com ${qtdpasses} passes, sendo deles ${passes_corretos} corretos, ${nome_passador} pode ser convocado a craque do jogo, um atleta muito participativo, com alta taxa de acertos, sendo ela: ${porcentagem}%.`
+        } else if (qtdpasses <= 80 && porcentagem == 50) {
+            resultados.innerHTML = `Com ${qtdpasses} passes, sendo deles ${passes_corretos} corretos, ${nome_passador} foi extremamente participativo e esteve na média de acertos, com uma taxa de ${porcentagem}% de passes corretos.`
+
+        } else if (qtdpasses <= 80 && porcentagem < 50) {
+            resultados.innerHTML = `Com ${qtdpasses} passes, sendo deles ${passes_corretos} corretos, ${nome_passador} não foi tão bem, mesmo sendo participativo errou muitos passes, tendo uma taxa de ${porcentagem}% de acertos.`
+
+        } else if (qtdpasses > 80) {
+
+            resultados.innerHTML = `Um jogador não executa ${qtdpasses} passes em uma única partida.`
+        }
+
+
+
+    }
+
+
+
+
+
+    function calcular_dribles() {
+        var nome_driblador = input_nome_driblador.value
+        var qtddribles = Number(input_dribles.value)
+        var dribles_corretos = Number(input_dribles_corretos.value)
+        var porcentagem_dribles = (dribles_corretos / qtddribles) * 100
+
+        if (nome_driblador == '') {
+
+            alert(`O nome do jogador não está preenchido`)
+
+        } else if (qtddribles == 0) {
+
+            alert(`Não há um número de dribles`)
+
+        } else if (dribles_corretos == '') {
+            alert(`Não está preenchido o campo de dribles corretos`)
+
+        }
+
+
+        if (qtddribles <= 10 && porcentagem_dribles > 50) {
+
+            resultados.innerHTML = `Efetuando ${qtddribles} dribles na partida e acertando ${dribles_corretos}, ${nome_driblador} não foi muito participativo, porém teve uma alta média de acertos de ${porcentagem_dribles}%. `
+        } else if (qtddribles <= 10 && porcentagem_dribles == 50) {
+
+            resultados.innerHTML = `Efetuando ${qtddribles} dribles na partida e acertando ${dribles_corretos}, ${nome_driblador} não foi muito participativo, porém esteve na média de acertos, com ${porcentagem_dribles}%. `
+        } else if (qtddribles <= 10 && porcentagem_dribles < 50) {
+
+            resultados.innerHTML = `Efetuando ${qtddribles} dribles na partida e acertando ${dribles_corretos}, ${nome_driblador} não foi muito participativo e esteve fora da média de acertos, com ${porcentagem_dribles}%. `
+
+        } else if (qtddribles <= 20 && porcentagem_dribles > 50) {
+
+            resultados.innerHTML = `Efetuando ${qtddribles} dribles na partida e acertando ${dribles_corretos}, ${nome_driblador} não foi concorrente a craque do jogo mas foi participativo e eficiente , já que teve também uma alta média de acertos de ${porcentagem_dribles}%. `
+        } else if (qtddribles <= 20 && porcentagem_dribles == 50) {
+
+            resultados.innerHTML = `Efetuando ${qtddribles} dribles na partida e acertando ${dribles_corretos}, ${nome_driblador} foi participativo e acertou metade dos dribles, gerando uma média de acertos de ${porcentagem_dribles}%. `
+        } else if (qtddribles <= 20 && porcentagem_dribles < 50) {
+
+            resultados.innerHTML = `Efetuando ${qtddribles} dribles na partida e acertando ${dribles_corretos}, ${nome_driblador} foi participativo, porém teve uma média de acertos baixa, de ${porcentagem_dribles}%. `
+        } else if (qtddribles <= 30 && porcentagem_dribles > 50) {
+            resultados.innerHTML = `Com ${qtddribles} dribles, sendo deles ${dribles_corretos} corretos, ${nome_driblador} pode ser convocado a craque do jogo, um atleta muito participativo, com alta taxa de acertos, sendo ela: ${porcentagem_dribles}%.`
+        } else if (qtddribles <= 30 && porcentagem_dribles == 50) {
+            resultados.innerHTML = `Com ${qtddribles} dribles, sendo deles ${dribles_corretos} corretos, ${nome_driblador} foi extremamente participativo e esteve na média de acertos, com uma taxa de ${porcentagem_dribles}% de dribles corretos.`
+
+        } else if (qtddribles <= 30 && porcentagem_dribles < 50) {
+            resultados.innerHTML = `Com ${qtddribles} dribles, sendo deles ${dribles_corretos} corretos, ${nome_driblador} não foi tão bem, mesmo sendo participativo errou muitos dribles, tendo uma taxa de ${porcentagem_dribles}% de acertos.`
+
+        } else if (qtddribles > 30) {
+            resultados.innerHTML = `Um jogador não executa ${qtddribles} dribles em uma única partida.`
+        }
+
+    }
+
+
+
+    function calcular_finalizacoes() {
+        var nome_finalizador = input_nome_finalizador.value
+        var qtdfinalizacoes = Number(input_finalizacoes.value)
+        var finalizacoes_corretas = Number(input_finalizacoes_corretas.value)
+        var porcentagem_finalizacoes = (finalizacoes_corretas / qtdfinalizacoes) * 100
+
+        if (nome_finalizador == '') {
+
+            alert(`O nome do jogador não está preenchido`)
+
+        } else if (qtdfinalizacoes == 0) {
+
+            alert(`Não há um número de finalizações`)
+
+        } else if (finalizacoes_corretas == '') {
+            alert(`Não está preenchido o campo de finalizações corretas`)
+
+        }
+        if (qtdfinalizacoes <= 3 && porcentagem_finalizacoes > 50) {
+
+            resultados.innerHTML = `Efetuando ${qtdfinalizacoes} finalizações na partida e acertando ${finalizacoes_corretas}, ${nome_finalizador} não foi muito participativo, porém teve uma alta média de acertos de ${porcentagem_finalizacoes}%. `
+        } else if (qtdfinalizacoes <= 3 && porcentagem_finalizacoes == 50) {
+
+            resultados.innerHTML = `Efetuando ${qtdfinalizacoes} finalizações na partida e acertando ${finalizacoes_corretas}, ${nome_finalizador} não foi muito participativo, porém esteve na média de acertos, com ${porcentagem_finalizacoes}%. `
+        } else if (qtdfinalizacoes <= 3 && porcentagem_finalizacoes < 50) {
+
+            resultados.innerHTML = `Efetuando ${qtdfinalizacoes} finalizações na partida e acertando ${finalizacoes_corretas}, ${nome_finalizador} não foi muito participativo e esteve fora da média de acertos, com ${porcentagem_finalizacoes}%. `
+
+        } else if (qtdfinalizacoes <= 7 && porcentagem_finalizacoes > 50) {
+
+            resultados.innerHTML = `Efetuando ${qtdfinalizacoes} finalizações na partida e acertando ${finalizacoes_corretas}, ${nome_finalizador} não foi concorrente a craque do jogo mas foi participativo e eficiente , já que teve também uma alta média de acertos de ${porcentagem_finalizacoes}%. `
+        } else if (qtdfinalizacoes <= 7 && porcentagem_finalizacoes == 50) {
+
+            resultados.innerHTML = `Efetuando ${qtdfinalizacoes} finalizações na partida e acertando ${finalizacoes_corretas}, ${nome_finalizador} foi participativo e acertou mais da metade das finalizações, gerando uma média de acertos de ${porcentagem_finalizacoes}%. `
+        } else if (qtdfinalizacoes <= 7 && porcentagem_finalizacoes < 50) {
+
+            resultados.innerHTML = `Efetuando ${qtdfinalizacoes} finalizações na partida e acertando ${finalizacoes_corretas}, ${nome_finalizador} foi participativo, porém teve uma média de acertos baixa, de ${porcentagem_finalizacoes}%. `
+        } else if (qtdfinalizacoes <= 15 && porcentagem_finalizacoes > 50) {
+            resultados.innerHTML = `Com ${qtdfinalizacoes} finalizações, sendo delas ${finalizacoes_corretas} corretas, ${nome_finalizador} pode ser convocado a craque do jogo, um atleta muito participativo, com alta taxa de acertos, sendo ela: ${porcentagem_finalizacoes}%.`
+        } else if (qtdfinalizacoes <= 15 && porcentagem_finalizacoes == 50) {
+            resultados.innerHTML = `Com ${qtdfinalizacoes} finalizações, sendo delas ${finalizacoes_corretas} corretas, ${nome_finalizador} foi extremamente participativo e esteve na média de acertos, com uma taxa de ${porcentagem_finalizacoes}% de finalizações corretas.`
+
+        } else if (qtdfinalizacoes <= 15 && porcentagem_finalizacoes < 50) {
+            resultados.innerHTML = `Com ${qtdfinalizacoes} finalizações, sendo delas ${finalizacoes_corretas} corretas, ${nome_finalizador} não foi tão bem, mesmo sendo participativo errou muitas finalizações, tendo uma taxa de ${porcentagem_finalizacoes}% de acertos.`
+
+        } else if (qtdfinalizacoes > 15) {
+
+            resultados.innerHTML = `Um jogador não finaliza ${qtdfinalizacoes} vezes em uma única partida.`
+        }
+
+    }
+
+
+
+</script>
