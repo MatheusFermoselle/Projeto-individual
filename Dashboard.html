@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<link rel="stylesheet" href="Dashboard.css">
+
+<body>
+
+    <div class="pai">
+
+        <div class="navbar">
+            <br>
+            <div class="logo">
+                <img src="GameStats-removebg-preview.png" alt="">
+            </div>
+
+
+            <br><br>
+            <div class="botao_navbar">
+
+
+                <a> Dashboard </a>
+
+
+            </div>
+
+            <div class="botao_navbar">
+
+
+                <a href="siteinstitucional.html"> Sair </a>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="conteudo_dashboard">
+
+            <div class="charts-container">
+
+
+                <canvas id="MyChart1" class="MyChartBar"></canvas>
+                <canvas id="MyChart2" class="MyChartBar"></canvas>
+
+
+
+
+            </div>
+
+
+            <div class="charts-container">
+
+
+                <canvas id="MyChart3" class="MyChartPie"></canvas>
+
+
+            </div>
+
+            <div class="charts-container">
+
+
+
+                <canvas id="MyChart4" class="MyChartLine"> </canvas>
+                <canvas id="MyChart5" class="MyChartLine"></canvas>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
+<script>
+
+
+
+const ctx1 = document.getElementById('MyChart1');
+
+  new Chart(ctx1, {
+    type: 'bar',
+    data: {
+      labels: ['Endrick', 'Veiga', 'Lópes', 'Estevão', 'Murilo', 'Gustavo'],
+      datasets: [{
+        label: 'Gols marcados',
+        data: [40, 20, 15, 7, 3, 2],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const ctx2 = document.getElementById('MyChart2');
+
+  new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['Veiga', 'Estevão', 'Rômulo', 'Piquerez', 'Rocha', 'Maike'],
+      datasets: [{
+        label: 'Assistências',
+        data: [10, 7, 5, 3, 2, 1],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const ctx3 = document.getElementById('MyChart3');
+
+  new Chart(ctx3, {
+    type: 'pie',
+    data: {
+      labels: ['Goleiro', 'Zagueiro', 'Lateral', 'Volante', 'Meia', 'Ponta', 'Atacante'],
+      datasets: [{
+        label: 'Jogadores por posições no elenco',
+        data: [3, 4, 5, 8, 4, 6, 2],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const ctx4 = document.getElementById('MyChart4');
+
+  new Chart(ctx4, {
+    type: 'line',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Jogadores vendidos',
+        data: [5, 2, 3, 0, 0, 7],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const ctx5 = document.getElementById('MyChart5');
+
+  new Chart(ctx5, {
+    type: 'line',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Jogadores comprados',
+        data: [2, 3, 0, 0, 5, 4],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+
+
+
+
+
+
+</script>
